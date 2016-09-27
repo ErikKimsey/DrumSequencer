@@ -30,7 +30,7 @@ var Machine = function (){
       gain = audioCtx.createGain(),
       volume = gain.gain.value,
       volume = 0.6,
-      intervalID, index,
+      intervalID, i = 0, playing = false,
       decr = document.getElementById('decr'),
       incr = document.getElementById('incr');
       gain.connect(audioCtx.destination);
@@ -95,13 +95,86 @@ var Machine = function (){
       */
 
 
-
       /*
       // ** BEGIN : Playloop() & intrvl() **
       */
 
+      function intrvl(){
+        intervalID = window.setInterval(Playloop, Tempo.getTempo());
+      }
+
+      function Playloop(){
+        playing = true;
+        (function(){
+          if(i < 16){
+            snareLoop.playIf(i);
+            kickLoop.playIf(i);
+            hHLoop.playIf(i);
+            crashLoop.playIf(i);
+            i++;
+          }
+          if(i >= 16) {
+            i = 0;
+            snareLoop.playIf(i);
+            kickLoop.playIf(i);
+            hHLoop.playIf(i);
+            crashLoop.playIf(i);
+          }
+        })();
+      }
+
+      function intrvl(){
+        if(playing === false){
+            intervalID = window.setInterval(Playloop, Tempo.getTempo());
+          }
+        else {
+          return;
+        }
+      }
+
       /*
       // ** END  : Playloop() & intrvl() **
+      */
+
+      /*
+
+var i = 0, playing = false;
+
+function Playloop(){
+
+  playing = true;
+        (function(){
+          if(i < 16){
+            // snareLoop.playIf(i);
+            // kickLoop.playIf(i);
+            // hHLoop.playIf(i);
+            // crashLoop.playIf(i);
+            console.log(i);
+            i++;
+          }
+          if (i >= 16){
+            i = 0;
+          }
+        })();
+      }
+
+  function intrvl(){
+    if(playing === false){
+        intervalID = window.setInterval(Playloop, 200);
+      }
+    else {
+      return;
+    }
+  }
+
+function stop(){
+  clearInterval(intervalID);
+  playing = false;
+  i = 0;
+}
+
+
+
       */
 
 
@@ -159,11 +232,9 @@ var Machine = function (){
   //  Stop()
   stop.onclick = function(){
     console.log("stop");
-    // clearInterval(intervalID);
-    // snareLoop.source.stop();
-    // kickLoop.source.stop();
-    // hHLoop.source.stop();
-    // crashLoop.source.stop();
+    clearInterval(intervalID);
+    playing = false;
+    i = 0;
   }
 
   // Incr Tempo

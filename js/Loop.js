@@ -36,11 +36,11 @@ var Drum = function(name, file){
   }
 
   function playIf(index){
-      if(seq[index].isActive() == true){
+      if(seq[index].isActive() === true){
         console.log('inside playif');
         Machine.getData(name, file);
       }
-      if(seq[index].isActive() == false){
+      if(seq[index].isActive() === false){
         return;
       }
   }
