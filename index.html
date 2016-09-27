@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>WebAudio Drum Machine - v3</title>
+  <meta name="Synthesizer written using the Web Audio API." content="Dub Synth">
+  <meta name="Erik Kimsey" content="Front-End Developer -> www.erikkimsey.com">
+
+  <link rel="stylesheet" href="main.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<div id="view">
+
+</div>
+
+<div id="typeContainer">
+  <div>
+    <a href="#kick" id="kick" class="drumtype">Ki</a>
+  </div>
+  <div>
+    <a href="#snare" id="snare" class="drumtype">Sn</a>
+  </div>
+  <div>
+    <a href="#hihat"  id="hihat" class="drumtype">Hh</a>
+  </div>
+  <div>
+    <a href="#crash"  id="crash" class="drumtype">Cr</a>
+  </div>
+</div>
+
+
+<div id="playCtrls">
+  <div id="play">
+    Play
+  </div>
+  <div id="stop">
+    Stop
+  </div>
+  <div id="incr" class="tempBTN">
+    +
+  </div>
+  <div id="tempoDisp">
+
+  </div>
+  <div id="decr" class="tempBTN">
+    -
+  </div>
+</div>
+
+
+
+
+<!-- <script src="data/data.js"></script> -->
+<!-- <script src="test/lib/jasmine-2.4.1/jasmine.js"></script>
+<script src="test/lib/jasmine-2.4.1/jasmine-html.js"></script>
+<script src="test/lib/jasmine-2.4.1/boot.js"></script> -->
+<script src="js/views/kickView.js"></script>
+<script src="js/views/snareView.js"></script>
+<script src="js/views/hhView.js"></script>
+<script src="js/views/crashView.js"></script>
+<script src="js/Tempo.js"></script>
+<script src="js/Hit.js"></script>
+<script src="js/Loop.js"></script>
+<script src="js/Machine.js"></script>
+
+</body>
+</html>

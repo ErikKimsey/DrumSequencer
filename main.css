@@ -1,0 +1,117 @@
+body {
+background-color: gray;
+display: block;
+}
+
+.stepContainer {
+  display: flex;
+}
+
+#playCtrls {
+  display: flex;
+  width: 30%;
+  height:auto;
+  padding:0.5%;
+  margin:1%;
+  border:solid 3px white;
+  color: white;
+  border-radius: 20px;
+  font-family: sans-serif;
+  font-size: 3em;
+}
+
+#play {
+  width:50%;
+  height:100%;
+  text-align: center;
+  border-right: solid 1.5px white;
+}
+
+#play:hover {
+  color:#bcd2b9;
+}
+
+#stop {
+  width:50%;
+  height:auto;
+  text-align: center;
+  border-left: solid 1.5px white;
+}
+#stop:hover {
+  color:#bcd2b9;
+}
+
+.btn {
+  width:200px;
+  height:200px;
+  background-color: gray;
+  border: solid 3px #bcd219;
+  border-radius: 20px;
+  margin: 3px;
+}
+
+#typeContainer {
+  position: relative;
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1% auto;
+}
+
+.drumtype {
+  width:200px;
+  height:120px;
+  background-color: gray;
+  color: #bcd2b9;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 3em;
+  padding-top: 1em;
+  border: solid 3px orange;
+  border-radius: 20px;
+  margin:3px;
+}
+
+#snareContainer {
+  background-color: orange;
+}
+
+#kickContainer {
+  background-color: purple;
+}
+
+#hhContainer {
+  background-color: yellow;
+}
+
+#crashContainer {
+  background-color: pink;
+}
+
+.black {
+  width:200px;
+  height:200px;
+  background-color: black;
+  border: solid 3px #bcd219;
+  border-radius: 20px;
+  margin: 3px;
+}
+
+.tempBTN {
+  width: auto;
+  padding: 1%;
+  border: solid 1px white;
+  border-radius: 5px;
+}
+
+.tempBTN:hover {
+  background-color: orange;
+}
+
+#tempoDisp {
+  background-color: black;
+  width:auto;
+  padding:1%;
+  border: solid 1px white;
+  border-radius: 5px;
+}
