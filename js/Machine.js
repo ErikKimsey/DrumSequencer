@@ -99,10 +99,6 @@ var Machine = function (){
       // ** BEGIN : Playloop() & intrvl() **
       */
 
-      function intrvl(){
-        intervalID = window.setInterval(Playloop, Tempo.getTempo());
-      }
-
       function Playloop(){
         playing = true;
         (function(){
